@@ -10,7 +10,7 @@ class AuthContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     RxBool isLogin = false.obs;
     return Container(
-      height: 400,
+      // height: 400,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Theme.of(context).colorScheme.primary.withOpacity(0.7),
@@ -97,7 +97,8 @@ class AuthContainer extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20,),
-              Obx(() =>  isLogin.value ? LoginForm() : SignUpForm(),)
+              Obx(() =>  isLogin.value ? LoginForm() : SignUpForm(),),
+             
               ],
             ),
           ),

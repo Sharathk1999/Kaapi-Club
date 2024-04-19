@@ -13,14 +13,16 @@ class AuthPage extends StatelessWidget {
           padding: EdgeInsets.all(
             12.0,
           ),
-          child: Column(
-            children: [
-              IntroTitle(),
-              SizedBox(
-                height: 15,
-              ),
-             AuthContainer()
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                IntroTitle(),
+                SizedBox(
+                  height: 15,
+                ),
+               AuthContainer()
+              ],
+            ),
           ),
         ),
       ),

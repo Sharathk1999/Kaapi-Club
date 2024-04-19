@@ -3,7 +3,7 @@ class ImagesAsset {
   static const iconsUrl ="assets/icons";
 
 //images
-static const kaapiImg = "$imagesUrl/Kaapi.svg";
+static const kaapiImg = "$imagesUrl/Kaapi.png";
 
 //icons
   static const kaapiIcon = "$iconsUrl/kaapi.svg";

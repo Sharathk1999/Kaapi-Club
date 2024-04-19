@@ -4,10 +4,14 @@ import 'package:kaapi_club/core/colors.dart';
 var darkTheme = ThemeData(
   brightness: Brightness.dark,
   useMaterial3: true,
-  inputDecorationTheme:  const InputDecorationTheme(
-            fillColor: darkBgColor,
-            filled: true,
-          ),
+  inputDecorationTheme: InputDecorationTheme(
+    border: UnderlineInputBorder(
+      borderSide: BorderSide.none,
+      borderRadius: BorderRadius.circular(12),
+    ),
+    fillColor: darkBgColor,
+    filled: true,
+  ),
   colorScheme: const ColorScheme.dark(
     primary: darkPrimaryColor,
     onPrimary: darkOnBgColor,
