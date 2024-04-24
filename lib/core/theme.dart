@@ -4,6 +4,9 @@ import 'package:kaapi_club/core/colors.dart';
 var darkTheme = ThemeData(
   brightness: Brightness.dark,
   useMaterial3: true,
+  appBarTheme:const AppBarTheme(
+    backgroundColor: darkPrimaryColor
+  ),
   inputDecorationTheme: InputDecorationTheme(
     border: UnderlineInputBorder(
       borderSide: BorderSide.none,

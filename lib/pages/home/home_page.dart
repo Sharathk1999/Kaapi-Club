@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kaapi_club/core/app_strings.dart';
 import 'package:kaapi_club/core/colors.dart';
 import 'package:kaapi_club/core/images.dart';
-import 'package:kaapi_club/pages/home/widgets/chat_listTile.dart';
+import 'package:kaapi_club/pages/home/widgets/chat_list_tile.dart';
 import 'package:kaapi_club/pages/home/widgets/home_tabbar.dart';
 
 class HomePage extends StatefulWidget {
@@ -58,16 +58,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: TabBarView(
           controller: tabController,
           children: [
-          ChatListTile(),
+          const ChatListTile(),
             ListView(
-              children: [
+              children: const [
                 ListTile(
                   title: Text("Sharath"),
                 )
               ],
             ),
             ListView(
-              children: [
+              children: const [
                 ListTile(
                   title: Text("Sharath"),
                 )

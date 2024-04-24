@@ -12,7 +12,7 @@ homeTabBar(TabController tabController, BuildContext context) {
       indicatorSize: TabBarIndicatorSize.label,
       labelStyle:  Theme.of(context).textTheme.bodyLarge,
       unselectedLabelStyle: Theme.of(context).textTheme.labelLarge,
-      tabs: [
+      tabs: const [
         Text(
           "chats",
         ),

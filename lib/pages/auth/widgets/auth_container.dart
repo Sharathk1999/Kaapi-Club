@@ -96,8 +96,8 @@ class AuthContainer extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 20,),
-              Obx(() =>  isLogin.value ? LoginForm() : SignUpForm(),),
+                const SizedBox(height: 20,),
+              Obx(() =>  isLogin.value ? const LoginForm() : const SignUpForm(),),
              
               ],
             ),
