@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "259361655226",
+    "project_id": "kaapi-club",
+    "storage_bucket": "kaapi-club.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259361655226:android:77450100d0b4781c60f583",
+        "android_client_info": {
+          "package_name": "com.example.kaapi_club"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADjhtQmuFp2X7ugxOKH-FLTzOncXq6KHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
