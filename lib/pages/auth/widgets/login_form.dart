@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kaapi_club/controller/auth_controller.dart';
 import 'package:kaapi_club/core/colors.dart';
 
 import '../../../widgets/common_btn.dart';
@@ -9,30 +11,48 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+
+    AuthController authController = Get.put(AuthController());
     return Column(
       children: [
-        const TextField(
+        TextField(
+          controller: emailController,
           cursorColor: darkContainerColor,
-          decoration: InputDecoration(
-              hintText: "your email", prefixIcon: Icon(CupertinoIcons.mail)),
+          decoration: const InputDecoration(
+            hintText: "your email",
+            prefixIcon: Icon(
+              CupertinoIcons.mail,
+            ),
+          ),
         ),
         const SizedBox(
           height: 25.0,
         ),
-        const TextField(
+        TextField(
+          controller: passwordController,
           cursorColor: darkContainerColor,
-          decoration: InputDecoration(
-              hintText: "your password",
-              prefixIcon: Icon(CupertinoIcons.lock_circle)),
+          decoration: const InputDecoration(
+            hintText: "your password",
+            prefixIcon: Icon(
+              CupertinoIcons.lock_circle,
+            ),
+          ),
         ),
         const SizedBox(
           height: 50.0,
         ),
-        CommonBtn(
+     Obx(() =>    authController.isLoading.value ? const CircularProgressIndicator(color: Colors.white,):CommonBtn(
           btnName: "Login",
           iconData: CupertinoIcons.lock_open,
-          onTap: () {},
-        ),
+          onTap: () {
+            authController.login(
+              emailController.text,
+              passwordController.text,
+            );
+          },
+        ),),
         const SizedBox(
           height: 25.0,
         ),

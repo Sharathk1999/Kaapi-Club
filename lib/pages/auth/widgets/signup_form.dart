@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kaapi_club/controller/auth_controller.dart';
 import 'package:kaapi_club/widgets/common_btn.dart';
 
 import '../../../core/colors.dart';
@@ -10,40 +11,56 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    TextEditingController nameController = TextEditingController();
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+
+    AuthController authController = Get.put(AuthController());
+
+    return Column(
       children: [
-        const TextField(
+        TextField(
+          controller: nameController,
           cursorColor: darkContainerColor,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               hintText: "your name", prefixIcon: Icon(CupertinoIcons.mail)),
         ),
         const SizedBox(
           height: 25,
         ),
-        const TextField(
+        TextField(
+          controller: emailController,
           cursorColor: darkContainerColor,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               hintText: "your email", prefixIcon: Icon(CupertinoIcons.mail)),
         ),
         const SizedBox(
           height: 25,
         ),
-        const TextField(
+        TextField(
+          controller: passwordController,
           cursorColor: darkContainerColor,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               hintText: "your password",
               prefixIcon: Icon(CupertinoIcons.lock_circle)),
         ),
         const SizedBox(
           height: 50,
         ),
-        CommonBtn(
-          btnName: "Sign up",
-          iconData: CupertinoIcons.pencil_ellipsis_rectangle,
-          onTap: () {
-            Get.offAllNamed("/homePage");
-          },
-        ),
+    Obx(() =>     authController.isLoading.value
+            ?const  CircularProgressIndicator(
+              color: Colors.white,
+            )
+            : CommonBtn(
+                btnName: "Sign up",
+                iconData: CupertinoIcons.pencil_ellipsis_rectangle,
+                onTap: () {
+                  authController.signUpUser(
+                    emailController.text.trim(),
+                    passwordController.text.trim(),
+                  );
+                },
+              ),),
         const SizedBox(
           height: 25.0,
         ),

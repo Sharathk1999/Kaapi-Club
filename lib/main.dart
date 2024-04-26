@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kaapi_club/core/page_paths.dart';
 import 'package:kaapi_club/core/theme.dart';
-import 'package:kaapi_club/pages/home/home_page.dart';
 
 import 'firebase_options.dart';
+import 'pages/profile/profile_page.dart';
 
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       getPages: pagePaths,
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
-      home: const HomePage(),
+      home: const ProfilePage(),
     );
   }
 }

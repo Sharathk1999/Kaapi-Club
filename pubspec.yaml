@@ -39,6 +39,7 @@ dependencies:
   slide_to_act: ^2.0.2   #for slide btn
   get: ^4.6.6            #GetX
   firebase_core: ^2.30.1
+  firebase_auth: ^4.19.4
 
 dev_dependencies:
   flutter_test:
