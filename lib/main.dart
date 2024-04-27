@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kaapi_club/core/page_paths.dart';
+import 'package:kaapi_club/core/page_routes.dart';
 import 'package:kaapi_club/core/theme.dart';
 
 import 'firebase_options.dart';

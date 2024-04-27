@@ -4,6 +4,7 @@ import 'package:kaapi_club/pages/chat/chat_page.dart';
 import 'package:kaapi_club/pages/home/home_page.dart';
 
 import '../pages/profile/profile_page.dart';
+import '../pages/profile/profile_update_page.dart';
 
 var pagePaths = [
   GetPage(
@@ -28,7 +29,7 @@ var pagePaths = [
   ),
   GetPage(
     name: "/profileUpdatePage",
-    page: () => const ChatPage (),
+    page: () => const ProfileUpdatePage(),
     transition: Transition.native,
   ),
 ];

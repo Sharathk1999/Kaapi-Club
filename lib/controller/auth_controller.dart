@@ -23,7 +23,7 @@ class AuthController extends GetxController {
         log('Wrong password provided for that user.');
       }
     }
-    isLoading.value=false;
+    isLoading.value = false;
   }
 
   Future<void> signUpUser(String email, String password) async {
@@ -42,6 +42,11 @@ class AuthController extends GetxController {
     } catch (e) {
       log(e.toString());
     }
-    isLoading.value=false;
+    isLoading.value = false;
+  }
+
+  Future<void> signOut() async {
+    await auth.signOut();
+    Get.offAllNamed("/authPage");
   }
 }

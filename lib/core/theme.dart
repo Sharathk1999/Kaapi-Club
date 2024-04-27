@@ -14,6 +14,7 @@ var darkTheme = ThemeData(
     ),
     fillColor: darkBgColor,
     filled: true,
+    
   ),
   colorScheme: const ColorScheme.dark(
     primary: darkPrimaryColor,

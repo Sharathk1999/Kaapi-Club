@@ -14,6 +14,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     SplashController splashController= Get.put(SplashController());
     return Scaffold(
       body: Center(
