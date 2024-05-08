@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kaapi_club/widgets/common_btn.dart';
 
-class ProfileUpdatePage extends StatelessWidget {
-  const ProfileUpdatePage({super.key});
+class UserProfileUpdatePage extends StatelessWidget {
+  const UserProfileUpdatePage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -56,8 +56,10 @@ class SignUpForm extends StatelessWidget {
                 iconData: CupertinoIcons.pencil_ellipsis_rectangle,
                 onTap: () {
                   authController.signUpUser(
-                    emailController.text.trim(),
+                    emailController.text.trim(), 
                     passwordController.text.trim(),
+                    nameController.text.trim(),
+                    context,
                   );
                 },
               ),),

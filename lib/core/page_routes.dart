@@ -2,9 +2,7 @@ import 'package:get/get.dart';
 import 'package:kaapi_club/pages/auth/auth_page.dart';
 import 'package:kaapi_club/pages/chat/chat_page.dart';
 import 'package:kaapi_club/pages/home/home_page.dart';
-
-import '../pages/profile/profile_page.dart';
-import '../pages/profile/profile_update_page.dart';
+import 'package:kaapi_club/pages/profile/profile_page.dart';
 
 var pagePaths = [
   GetPage(
@@ -27,9 +25,14 @@ var pagePaths = [
     page: () => const ProfilePage(),
     transition: Transition.native,
   ),
-  GetPage(
-    name: "/profileUpdatePage",
-    page: () => const ProfileUpdatePage(),
-    transition: Transition.native,
-  ),
+  // GetPage(
+  //   name: "/userProfilePage",
+  //   page: () => const UserProfilePage(),
+  //   transition: Transition.native,
+  // ),
+  // GetPage(
+  //   name: "/profileUpdatePage",
+  //   page: () => const UserProfileUpdatePage(),
+  //   transition: Transition.native,
+  // ),
 ];
