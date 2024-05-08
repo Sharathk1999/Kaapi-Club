@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:kaapi_club/pages/auth/auth_page.dart';
 import 'package:kaapi_club/pages/chat/chat_page.dart';
+import 'package:kaapi_club/pages/contact/contact_page.dart';
 import 'package:kaapi_club/pages/home/home_page.dart';
 import 'package:kaapi_club/pages/profile/profile_page.dart';
 
@@ -23,6 +24,11 @@ var pagePaths = [
   GetPage(
     name: "/profilePage",
     page: () => const ProfilePage(),
+    transition: Transition.native,
+  ),
+  GetPage(
+    name: "/contactPage",
+    page: () => const ContactPage(),
     transition: Transition.native,
   ),
   // GetPage(

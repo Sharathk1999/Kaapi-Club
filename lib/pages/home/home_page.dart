@@ -55,9 +55,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         bottom: homeTabBar(tabController, context),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.offAllNamed("/contactPage");
+        },
         child: Icon(
-          CupertinoIcons.create,
+          CupertinoIcons.add_circled,
           color: Theme.of(context).colorScheme.primary,
         ),
       ),
