@@ -15,7 +15,7 @@ class ProfileController extends GetxController {
   RxBool isLoading = false.obs;
   Rx<UserModel> currentUser = UserModel().obs;
 
-  @override
+  @override  
   void onInit() async {
     super.onInit();
     await getUserInfo();
@@ -31,6 +31,7 @@ class ProfileController extends GetxController {
 
   Future<void> updateProfile(
     String name,
+    String email,
     String imgUrl,
     String bio,
     String mobileNumber,
@@ -40,14 +41,18 @@ class ProfileController extends GetxController {
   try {
     final imgLink = await uploadImgToFirebase(imgUrl);
     final updatedUser = UserModel(
+      id: auth.currentUser!.uid,
       name: name,
-      profileImg: imgLink,
+      email: email,
+      profileImg: imgUrl == "" ? currentUser.value.profileImg : imgLink,
       bio: bio,
       mobileNumber: mobileNumber,
-    );
+    ); 
+    
     await db.collection("users").doc(auth.currentUser!.uid).set(
       updatedUser.toJson(),
     );
+    await getUserInfo();
   } catch (e) {
     log(e.toString());
   }

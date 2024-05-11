@@ -17,20 +17,20 @@ class ChatListTile extends StatelessWidget {
           },
           child: const ChatTile(
             name: "Sharath",
-            imgUrl: ImagesAsset.kaapiImg,
+            imgUrl: ImagesAsset.defaultProfImg,
             lastMsg: "I got a job offer yesterday",
             lastMsgTime: "05:30 am",
           ),
         ),
         const ChatTile(
           name: "Sam",
-          imgUrl: ImagesAsset.kaapiImg,
+          imgUrl: ImagesAsset.defaultProfImg,
           lastMsg: "All the best for your interview.",
           lastMsgTime: "06:30 am",
         ),
         const ChatTile(
           name: "Flash",
-          imgUrl: ImagesAsset.kaapiImg,
+          imgUrl: ImagesAsset.defaultProfImg,
           lastMsg: "Help me save the world.",
           lastMsgTime: "08:30 am", 
         ),

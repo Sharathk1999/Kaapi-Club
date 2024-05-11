@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kaapi_club/controller/contact_list_controller.dart';
 import 'package:kaapi_club/core/images.dart';
 import 'package:kaapi_club/pages/contact/widgets/contect_search.dart';
 import 'package:kaapi_club/pages/contact/widgets/new_contact_tile.dart';
@@ -12,6 +13,7 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     RxBool isSearchEnabled = false.obs;
+    ContactListController contactListController = Get.put(ContactListController());
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -72,42 +74,20 @@ class ContactPage extends StatelessWidget {
             const SizedBox(
               height: 15.0,
             ),
-            const ChatTile(
-              name: "Sharath",
-              imgUrl: ImagesAsset.kaapiImg,
-              lastMsg: "I got a job offer yesterday",
-              lastMsgTime: "05:30 am",
-            ),
-            const ChatTile(
-              name: "Sam",
-              imgUrl: ImagesAsset.kaapiImg,
-              lastMsg: "All the best for your interview.",
-              lastMsgTime: "06:30 am",
-            ),
-            const ChatTile(
-              name: "Flash",
-              imgUrl: ImagesAsset.kaapiImg,
-              lastMsg: "Help me save the world.",
-              lastMsgTime: "08:30 am",
-            ),
-            const ChatTile(
-              name: "Sharath",
-              imgUrl: ImagesAsset.kaapiImg,
-              lastMsg: "I got a job offer yesterday",
-              lastMsgTime: "05:30 am",
-            ),
-            const ChatTile(
-              name: "Sam",
-              imgUrl: ImagesAsset.kaapiImg,
-              lastMsg: "All the best for your interview.",
-              lastMsgTime: "06:30 am",
-            ),
-            const ChatTile(
-              name: "Flash",
-              imgUrl: ImagesAsset.kaapiImg,
-              lastMsg: "Help me save the world.",
-              lastMsgTime: "08:30 am",
-            ),
+           Obx(() => Column(
+            children: contactListController.userList.map((user) =>   GestureDetector(
+              onTap: () {
+                
+              },
+              child: ChatTile(
+                name: user.name ?? "User Name",
+                imgUrl: user.profileImg ?? ImagesAsset.defaultProfImg,
+                lastMsg: "",
+                lastMsgTime: "",
+              ),
+            ),).toList(),
+           ))
+           
           ],
         ),
       ),

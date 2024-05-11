@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
@@ -155,8 +156,6 @@ class ProfilePage extends StatelessWidget {
                                                 .background,
                                           ),
                                           child: profileController.currentUser
-                                                      .value.profileImg ==
-                                                  "" || profileController.currentUser
                                                       .value.profileImg == null
                                               ? const Icon(CupertinoIcons.photo)
                                               : ClipRRect(
@@ -169,6 +168,10 @@ class ProfilePage extends StatelessWidget {
                                                         .value
                                                         .profileImg!,
                                                     fit: BoxFit.cover,
+                                                    errorBuilder: (context, error, stackTrace) {
+                                                      log(error.toString());
+                                                      return Text(error.toString());
+                                                    },
                                                   ),
                                                 ),
                                         ),
@@ -288,6 +291,7 @@ class ProfilePage extends StatelessWidget {
                                       onTap: () async {
                                         await profileController.updateProfile(
                                           name.text.trim(),
+                                          email.text.trim(),
                                           imgPath.value,
                                           bio.text.trim(),
                                           mobile.text.trim(),

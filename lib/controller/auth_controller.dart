@@ -22,7 +22,7 @@ class AuthController extends GetxController {
         password: password,
       );
       // ignore: use_build_context_synchronously
-      showAwesomeSnackBar(context, "You have successfully logged in...", "User Login ", ContentType.success);
+      showAwesomeSnackBar(context, "You have successfully logged in to Kaapi Club", "Login Successful", ContentType.success);
       Get.offAllNamed("/homePage");
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -43,7 +43,8 @@ class AuthController extends GetxController {
       );
       await createUser(name, email);
       // ignore: use_build_context_synchronously
-      showAwesomeSnackBar(context, "Your Account Creation Successful", "Account Creation", ContentType.success);
+      showAwesomeSnackBar(context, "Your Account Creation Successful", "Account Creation Successful", ContentType.success);
+       Get.offAllNamed("/homePage");
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         log('The password provided is too weak.');
