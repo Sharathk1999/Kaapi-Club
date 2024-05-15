@@ -23,7 +23,7 @@ class SignUpForm extends StatelessWidget {
           controller: nameController,
           cursorColor: darkContainerColor,
           decoration: const InputDecoration(
-              hintText: "your name", prefixIcon: Icon(CupertinoIcons.mail)),
+              hintText: "your name", prefixIcon: Icon(CupertinoIcons.person)),
         ),
         const SizedBox(
           height: 25,

@@ -1,13 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kaapi_club/controller/chat_controller.dart';
 import 'package:kaapi_club/core/images.dart';
+import 'package:kaapi_club/models/user_model.dart';
 import 'package:kaapi_club/pages/chat/widgets/chat_bubble.dart';
 
 class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+  final UserModel userModel;
+  const ChatPage({
+    super.key,
+    required this.userModel,
+  });
 
   @override
   Widget build(BuildContext context) {
+    ChatController chatController = Get.put(ChatController());
+    TextEditingController msgController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         leading: const Padding(
@@ -20,7 +29,7 @@ class ChatPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Sharath Kumar",
+          userModel.name ??    "user name",
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             Text(
@@ -63,22 +72,29 @@ class ChatPage extends StatelessWidget {
             ),
             Expanded(
               child: TextField(
+                controller: msgController,
                 cursorColor: Theme.of(context).colorScheme.primaryContainer,
-                decoration:const InputDecoration(
+                decoration: const InputDecoration(
                   filled: false,
                   hintText: "write your message...",
                 ),
               ),
             ),
-             IconButton(
+            IconButton(
               onPressed: () {},
               icon: Icon(
                 CupertinoIcons.mic,
                 color: Theme.of(context).colorScheme.primaryContainer,
               ),
             ),
-             IconButton(
-              onPressed: () {},
+            IconButton(
+              onPressed: () {
+              
+                if (msgController.text.isNotEmpty) {
+                  chatController.sendMessage(userModel.id!, msgController.text.trim(),);
+                  msgController.clear();
+                }
+              },
               icon: Icon(
                 CupertinoIcons.chat_bubble,
                 color: Theme.of(context).colorScheme.primaryContainer,
